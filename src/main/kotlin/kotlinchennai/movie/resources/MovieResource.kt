@@ -10,7 +10,7 @@ import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 import org.jboss.logging.Logger
 
-@Path("/movies")
+@Path("/api/movies")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 class MovieResource @Inject constructor (val log: Logger) {
