@@ -6,5 +6,7 @@ class SprintBItemDTO(
     val priority: String,
     val assigned: String,
     val status: String,
-    val storyPoints: String
+    val storyPoints: String,
+    val id: Long=0,
+    val subTasks: List<SubTasksDTO>
 )

@@ -5,5 +5,6 @@ class SubTasksDTO (
     val summary: String,
     val priority: String,
     val assigned: String,
-    val status: String
+    val status: String,
+    val id: Int=0
 )
