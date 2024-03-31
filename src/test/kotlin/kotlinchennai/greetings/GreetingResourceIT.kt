@@ -1,4 +1,4 @@
-package `in`.rajmahendra
+package kotlinchennai.greetings
 
 import io.quarkus.test.junit.QuarkusIntegrationTest
 

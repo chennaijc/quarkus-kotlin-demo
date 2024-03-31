@@ -16,6 +16,8 @@ val quarkusPlatformVersion: String by project
 dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
 
+    implementation("io.quarkus:quarkus-hibernate-orm-panache")
+    implementation("io.quarkus:quarkus-jdbc-h2")
 
     implementation("io.quarkus:quarkus-resteasy-qute")
 
@@ -47,11 +49,15 @@ tasks.withType<Test> {
 }
 allOpen {
     annotation("javax.ws.rs.Path")
+    annotation("jakarta.persistence.Entity")
     annotation("javax.enterprise.context.ApplicationScoped")
     annotation("io.quarkus.test.junit.QuarkusTest")
+    annotation("io.quarkus:quarkus-panache-common")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
     kotlinOptions.javaParameters = true
 }
+
+
