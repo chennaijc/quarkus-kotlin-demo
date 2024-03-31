@@ -1,14 +1,15 @@
-package `in`.rajmahendra
+package kotlinchennai.greetings
 
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.jupiter.api.Test
 
-@QuarkusTest
-class GreetingResourceTest {
 
-    @Test
+open class GreetingResourceTest {
+
+
+
     fun testHelloEndpoint() {
         given()
           .`when`().get("/hello")

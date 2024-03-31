@@ -1,39 +1,38 @@
-package kotlinchennai.movie
+package kotlinchennai.books
 
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 import org.hamcrest.CoreMatchers.equalTo
-import org.hamcrest.CoreMatchers.`is`
 import org.junit.jupiter.api.Test
 
-@QuarkusTest
-class TestMovie {
-    @Test
+
+class TestBook {
+
     fun initiallyMoviesIsEmpty() {
         given()
-            .`when`().get("/movies")
+            .`when`().get("/api/books")
             .then()
             .statusCode(equalTo(200))
     }
 
-    @Test
+
     fun shouldBeEmptyWhenInvalidMovieIdProvided() {
         given()
             .pathParam("id", 2)
-            .`when`().get("/movies/id/{id}")
+            .`when`().get("/books/id/{id}")
             .then()
             .statusCode(200).body("id", equalTo(2)).body("title", equalTo("Ponnien Selvan 2"))
 
     }
 
-    @Test
+
     fun shouldAddAMovie() {
         val jsonStr = """{"id" : 3,"title" : "Sardar","released" : 2022}"""
 
         given().contentType(ContentType.JSON).
         and().body(jsonStr).
-        `when`().post("/movies").
+        `when`().post("/api/books").
         then().body("id", equalTo(3))
     }
 

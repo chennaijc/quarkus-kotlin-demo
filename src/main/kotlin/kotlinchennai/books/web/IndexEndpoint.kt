@@ -1,4 +1,4 @@
-package kotlinchennai.movie.web
+package kotlinchennai.books.web
 
 import io.quarkus.qute.Location
 import io.quarkus.qute.Template
