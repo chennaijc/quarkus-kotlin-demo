@@ -1,6 +1,6 @@
-# Quarkus-Kotlin-Demo
+# Quarkus Kotlin Demo
 
-This repository is for my tryst with Quarkus with Kotlin coding.
+A test bed to try and see how Kotling and Quarkus work togeather. This uses different requirements in one app. 
 
 ## Running the application in dev mode
 
